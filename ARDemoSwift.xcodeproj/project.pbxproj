@@ -1,0 +1,561 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF762C851F00D883005D08A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF762C841F00D883005D08A9 /* AppDelegate.swift */; };
+		EF762C871F00D883005D08A9 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = EF762C861F00D883005D08A9 /* Shaders.metal */; };
+		EF762C8A1F00D883005D08A9 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF762C891F00D883005D08A9 /* Renderer.swift */; };
+		EF762C8C1F00D883005D08A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF762C8B1F00D883005D08A9 /* ViewController.swift */; };
+		EF762C8F1F00D883005D08A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF762C8D1F00D883005D08A9 /* Main.storyboard */; };
+		EF762C911F00D883005D08A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF762C901F00D883005D08A9 /* Assets.xcassets */; };
+		EF762C941F00D883005D08A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF762C921F00D883005D08A9 /* LaunchScreen.storyboard */; };
+		EF762CA01F00D883005D08A9 /* ARDemoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF762C9F1F00D883005D08A9 /* ARDemoSwiftTests.swift */; };
+		EF762CAB1F00D883005D08A9 /* ARDemoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF762CAA1F00D883005D08A9 /* ARDemoSwiftUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF762C9C1F00D883005D08A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF762C791F00D882005D08A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF762C801F00D882005D08A9;
+			remoteInfo = ARDemoSwift;
+		};
+		EF762CA71F00D883005D08A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF762C791F00D882005D08A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF762C801F00D882005D08A9;
+			remoteInfo = ARDemoSwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF762C811F00D882005D08A9 /* ARDemoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARDemoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF762C841F00D883005D08A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF762C861F00D883005D08A9 /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		EF762C881F00D883005D08A9 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		EF762C891F00D883005D08A9 /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		EF762C8B1F00D883005D08A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF762C8E1F00D883005D08A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF762C901F00D883005D08A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF762C931F00D883005D08A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF762C951F00D883005D08A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF762C961F00D883005D08A9 /* ARDemoSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARDemoSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		EF762C9B1F00D883005D08A9 /* ARDemoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARDemoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF762C9F1F00D883005D08A9 /* ARDemoSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDemoSwiftTests.swift; sourceTree = "<group>"; };
+		EF762CA11F00D883005D08A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF762CA61F00D883005D08A9 /* ARDemoSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARDemoSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF762CAA1F00D883005D08A9 /* ARDemoSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARDemoSwiftUITests.swift; sourceTree = "<group>"; };
+		EF762CAC1F00D883005D08A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF762C7E1F00D882005D08A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762C981F00D883005D08A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762CA31F00D883005D08A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF762C781F00D882005D08A9 = {
+			isa = PBXGroup;
+			children = (
+				EF762C831F00D882005D08A9 /* ARDemoSwift */,
+				EF762C9E1F00D883005D08A9 /* ARDemoSwiftTests */,
+				EF762CA91F00D883005D08A9 /* ARDemoSwiftUITests */,
+				EF762C821F00D882005D08A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF762C821F00D882005D08A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF762C811F00D882005D08A9 /* ARDemoSwift.app */,
+				EF762C9B1F00D883005D08A9 /* ARDemoSwiftTests.xctest */,
+				EF762CA61F00D883005D08A9 /* ARDemoSwiftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF762C831F00D882005D08A9 /* ARDemoSwift */ = {
+			isa = PBXGroup;
+			children = (
+				EF762C841F00D883005D08A9 /* AppDelegate.swift */,
+				EF762C861F00D883005D08A9 /* Shaders.metal */,
+				EF762C881F00D883005D08A9 /* ShaderTypes.h */,
+				EF762C891F00D883005D08A9 /* Renderer.swift */,
+				EF762C8B1F00D883005D08A9 /* ViewController.swift */,
+				EF762C8D1F00D883005D08A9 /* Main.storyboard */,
+				EF762C901F00D883005D08A9 /* Assets.xcassets */,
+				EF762C921F00D883005D08A9 /* LaunchScreen.storyboard */,
+				EF762C951F00D883005D08A9 /* Info.plist */,
+				EF762C961F00D883005D08A9 /* ARDemoSwift-Bridging-Header.h */,
+			);
+			path = ARDemoSwift;
+			sourceTree = "<group>";
+		};
+		EF762C9E1F00D883005D08A9 /* ARDemoSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF762C9F1F00D883005D08A9 /* ARDemoSwiftTests.swift */,
+				EF762CA11F00D883005D08A9 /* Info.plist */,
+			);
+			path = ARDemoSwiftTests;
+			sourceTree = "<group>";
+		};
+		EF762CA91F00D883005D08A9 /* ARDemoSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF762CAA1F00D883005D08A9 /* ARDemoSwiftUITests.swift */,
+				EF762CAC1F00D883005D08A9 /* Info.plist */,
+			);
+			path = ARDemoSwiftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF762C801F00D882005D08A9 /* ARDemoSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF762CAF1F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwift" */;
+			buildPhases = (
+				EF762C7D1F00D882005D08A9 /* Sources */,
+				EF762C7E1F00D882005D08A9 /* Frameworks */,
+				EF762C7F1F00D882005D08A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARDemoSwift;
+			productName = ARDemoSwift;
+			productReference = EF762C811F00D882005D08A9 /* ARDemoSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF762C9A1F00D883005D08A9 /* ARDemoSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF762CB21F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwiftTests" */;
+			buildPhases = (
+				EF762C971F00D883005D08A9 /* Sources */,
+				EF762C981F00D883005D08A9 /* Frameworks */,
+				EF762C991F00D883005D08A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF762C9D1F00D883005D08A9 /* PBXTargetDependency */,
+			);
+			name = ARDemoSwiftTests;
+			productName = ARDemoSwiftTests;
+			productReference = EF762C9B1F00D883005D08A9 /* ARDemoSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF762CA51F00D883005D08A9 /* ARDemoSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF762CB51F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwiftUITests" */;
+			buildPhases = (
+				EF762CA21F00D883005D08A9 /* Sources */,
+				EF762CA31F00D883005D08A9 /* Frameworks */,
+				EF762CA41F00D883005D08A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF762CA81F00D883005D08A9 /* PBXTargetDependency */,
+			);
+			name = ARDemoSwiftUITests;
+			productName = ARDemoSwiftUITests;
+			productReference = EF762CA61F00D883005D08A9 /* ARDemoSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF762C791F00D882005D08A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = chenyn;
+				TargetAttributes = {
+					EF762C801F00D882005D08A9 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					EF762C9A1F00D883005D08A9 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = EF762C801F00D882005D08A9;
+					};
+					EF762CA51F00D883005D08A9 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = EF762C801F00D882005D08A9;
+					};
+				};
+			};
+			buildConfigurationList = EF762C7C1F00D882005D08A9 /* Build configuration list for PBXProject "ARDemoSwift" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF762C781F00D882005D08A9;
+			productRefGroup = EF762C821F00D882005D08A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF762C801F00D882005D08A9 /* ARDemoSwift */,
+				EF762C9A1F00D883005D08A9 /* ARDemoSwiftTests */,
+				EF762CA51F00D883005D08A9 /* ARDemoSwiftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF762C7F1F00D882005D08A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF762C941F00D883005D08A9 /* LaunchScreen.storyboard in Resources */,
+				EF762C911F00D883005D08A9 /* Assets.xcassets in Resources */,
+				EF762C8F1F00D883005D08A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762C991F00D883005D08A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762CA41F00D883005D08A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF762C7D1F00D882005D08A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF762C871F00D883005D08A9 /* Shaders.metal in Sources */,
+				EF762C8A1F00D883005D08A9 /* Renderer.swift in Sources */,
+				EF762C8C1F00D883005D08A9 /* ViewController.swift in Sources */,
+				EF762C851F00D883005D08A9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762C971F00D883005D08A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF762CA01F00D883005D08A9 /* ARDemoSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF762CA21F00D883005D08A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF762CAB1F00D883005D08A9 /* ARDemoSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF762C9D1F00D883005D08A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF762C801F00D882005D08A9 /* ARDemoSwift */;
+			targetProxy = EF762C9C1F00D883005D08A9 /* PBXContainerItemProxy */;
+		};
+		EF762CA81F00D883005D08A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF762C801F00D882005D08A9 /* ARDemoSwift */;
+			targetProxy = EF762CA71F00D883005D08A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF762C8D1F00D883005D08A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF762C8E1F00D883005D08A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF762C921F00D883005D08A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF762C931F00D883005D08A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF762CAD1F00D883005D08A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF762CAE1F00D883005D08A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF762CB01F00D883005D08A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ARDemoSwift/ARDemoSwift-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF762CB11F00D883005D08A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwift/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ARDemoSwift/ARDemoSwift-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF762CB31F00D883005D08A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARDemoSwift.app/ARDemoSwift";
+			};
+			name = Debug;
+		};
+		EF762CB41F00D883005D08A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ARDemoSwift.app/ARDemoSwift";
+			};
+			name = Release;
+		};
+		EF762CB61F00D883005D08A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARDemoSwift;
+			};
+			name = Debug;
+		};
+		EF762CB71F00D883005D08A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = Y4WP38LE9J;
+				INFOPLIST_FILE = ARDemoSwiftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.chenyn.ARDemoSwiftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ARDemoSwift;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF762C7C1F00D882005D08A9 /* Build configuration list for PBXProject "ARDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF762CAD1F00D883005D08A9 /* Debug */,
+				EF762CAE1F00D883005D08A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF762CAF1F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF762CB01F00D883005D08A9 /* Debug */,
+				EF762CB11F00D883005D08A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF762CB21F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF762CB31F00D883005D08A9 /* Debug */,
+				EF762CB41F00D883005D08A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF762CB51F00D883005D08A9 /* Build configuration list for PBXNativeTarget "ARDemoSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF762CB61F00D883005D08A9 /* Debug */,
+				EF762CB71F00D883005D08A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF762C791F00D882005D08A9 /* Project object */;
+}
