@@ -7,43 +7,31 @@
 //
 
 import UIKit
-import Metal
-import MetalKit
+import SceneKit
 import ARKit
 
-extension MTKView : RenderDestinationProvider {
-}
-
-class ViewController: UIViewController, MTKViewDelegate, ARSessionDelegate {
-    
-    var session: ARSession!
-    var renderer: Renderer!
+class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
+    @IBOutlet var sceneView: ARSCNView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set the view's delegate
-        session = ARSession()
-        session.delegate = self
+        sceneView.delegate = self
         
-        // Set the view to use the default device
-        if let view = self.view as? MTKView {
-            view.device = MTLCreateSystemDefaultDevice()
-            view.delegate = self
-            
-            guard view.device != nil else {
-                print("Metal is not supported on this device")
-                return
-            }
-            
-            // Configure the renderer to draw to the view
-            renderer = Renderer(session: session, metalDevice: view.device!, renderDestination: view)
-            
-            renderer.drawRectResized(size: view.bounds.size)
-        }
+        // Show statistics such as fps and timing information
+        sceneView.showsStatistics = true
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.handleTap(gestureRecognize:)))
-        view.addGestureRecognizer(tapGesture)
+        // Create a new (and empty) scene
+        let scene = SCNScene()
+        
+        // Set the scene to the view
+        sceneView.scene = scene
+        sceneView.scene.physicsWorld.contactDelegate = self
+        
+        self.addNewCube()
+        
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(didTapScreen(_:)))
+        sceneView.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,65 +39,48 @@ class ViewController: UIViewController, MTKViewDelegate, ARSessionDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingSessionConfiguration()
+        configuration.planeDetection = ARWorldTrackingSessionConfiguration.PlaneDetection.horizontal
         
         // Run the view's session
-        session.run(configuration)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        // Pause the view's session
-        session.pause()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
+        sceneView.session.run(configuration)
     }
     
     @objc
-    func handleTap(gestureRecognize: UITapGestureRecognizer) {
-        // Create anchor using the camera's current position
-        if let currentFrame = session.currentFrame {
-            
-            // Create a transform with a translation of 0.2 meters in front of the camera
-            var translation = matrix_identity_float4x4
-            translation.columns.3.z = -0.2
-            let transform = simd_mul(currentFrame.camera.transform, translation)
-            
-            // Add a new anchor to the session
-            let anchor = ARAnchor(transform: transform)
-            session.add(anchor: anchor)
+    func didTapScreen(_ sender: UIGestureRecognizer) {
+        
+        let bulletsNode = Bullet()
+        bulletsNode.position = SCNVector3(0, 0, -0.2) // SceneKit/AR coordinates are in meters
+        
+        let bulletDirection = self.getUserDirection()
+        bulletsNode.physicsBody?.applyForce(bulletDirection, asImpulse: true)
+        sceneView.scene.rootNode.addChildNode(bulletsNode)
+    }
+    
+    // MARK: - Contact Delegate
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        contact.nodeA.removeFromParentNode()
+        contact.nodeB.removeFromParentNode()
+        self.addNewCube()
+    }
+    
+    func getUserDirection() -> SCNVector3 {
+        if let frame = self.sceneView.session.currentFrame {
+            let mat = SCNMatrix4FromMat4Class.scnMatrix4(fromMat4Mth: frame.camera.transform)
+            return SCNVector3(-1 * mat.m31, -1 * mat.m32, -1 * mat.m33)
         }
+        return SCNVector3(0, 0, -1)
     }
     
-    // MARK: - MTKViewDelegate
-    
-    // Called whenever view changes orientation or layout is changed
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        renderer.drawRectResized(size: size)
-    }
-    
-    // Called whenever the view needs to render
-    func draw(in view: MTKView) {
-        renderer.update()
-    }
-    
-    // MARK: - ARSessionDelegate
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+    func addNewCube() {
+        let cubeNode = Cube()
         
+        let posX = floatBetween(-0.5, and: 0.5)
+        let posY = floatBetween(-0.5, and: 0.5  )
+        cubeNode.position = SCNVector3(posX, posY, -1)
+        sceneView.scene.rootNode.addChildNode(cubeNode)
     }
     
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-        
-    }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-        
+    func floatBetween(_ first: Float,  and second: Float) -> Float {
+        return (Float(arc4random()) / Float(UInt32.max)) * (first - second) + second
     }
 }
