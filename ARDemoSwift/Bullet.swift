@@ -18,6 +18,7 @@ class Bullet: SCNNode {
         let shape = SCNPhysicsShape(geometry: sphere, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         self.physicsBody?.isAffectedByGravity = false
+        self.physicsBody?.allowsResting = true
         self.physicsBody?.categoryBitMask = CollisionCategory.bullets.rawValue
         self.physicsBody?.contactTestBitMask = CollisionCategory.ship.rawValue
     }

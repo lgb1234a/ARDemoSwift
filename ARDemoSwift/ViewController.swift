@@ -49,18 +49,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
     func didTapScreen(_ sender: UIGestureRecognizer) {
         
         let bulletsNode = Bullet()
-        bulletsNode.position = SCNVector3(0, 0, -0.2) // SceneKit/AR coordinates are in meters
+        bulletsNode.position = SCNVector3(0, 0, -0.2)
         
         let bulletDirection = self.getUserDirection()
         bulletsNode.physicsBody?.applyForce(bulletDirection, asImpulse: true)
         sceneView.scene.rootNode.addChildNode(bulletsNode)
-    }
-    
-    // MARK: - Contact Delegate
-    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-        contact.nodeA.removeFromParentNode()
-        contact.nodeB.removeFromParentNode()
-        self.addNewCube()
     }
     
     func getUserDirection() -> SCNVector3 {
@@ -71,11 +64,23 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
         return SCNVector3(0, 0, -1)
     }
     
+    // MARK: - Contact Delegate
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            contact.nodeA.removeFromParentNode()
+            contact.nodeB.removeFromParentNode()
+            _ = self.sceneView.scene.rootNode.childNodes.map { node in
+                node.removeFromParentNode()
+            }
+            self.addNewCube()
+        })
+    }
+    
     func addNewCube() {
         let cubeNode = Cube()
         
         let posX = floatBetween(-0.5, and: 0.5)
-        let posY = floatBetween(-0.5, and: 0.5  )
+        let posY = floatBetween(-0.5, and: 0.5)
         cubeNode.position = SCNVector3(posX, posY, -1)
         sceneView.scene.rootNode.addChildNode(cubeNode)
     }
